@@ -1,0 +1,13 @@
+.flash_notice
+
+  - if flash[:error]
+    .alert.alert-danger.alert-dismissable.fade.in
+      a.close[href="#" data-dismiss="alert" aria-label="close"]
+        | ×
+      = flash[:error]
+
+  - elsif flash[:notice]
+    .alert.alert-success.alert-dismissable.fade.in
+      a.close[href="#" data-dismiss="alert" aria-label="close"]
+        | ×
+      = flash[:notice]

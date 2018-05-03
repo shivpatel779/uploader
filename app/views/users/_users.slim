@@ -1,0 +1,22 @@
+= hidden_field_tag :direction, params[:direction]
+= hidden_field_tag :sort, params[:sort]
+
+
+table.table.table-bordered
+  thead
+    tr
+      th= sortable 'id'
+      th= sortable 'name'
+      th= sortable 'birthday'
+      th= sortable 'number'
+      th Description
+  tbody
+    - @users.each_with_index do |user, index|
+      tr
+        td= user.id
+        td= user.name
+        td= user.birthday.strftime("%Y-%m-%d")
+        td= user.number
+        td= user.description
+
+.pull-right= will_paginate @users

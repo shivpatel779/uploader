@@ -1,0 +1,10 @@
+.row
+  .col-md-9
+    h4.text-muted Upload Users
+
+.row
+  .col-md-9
+    = form_tag import_users_path, multipart: true do
+      .col-md-4= file_field_tag :file, required: true
+      .col-md-4= submit_tag "Import"
+
